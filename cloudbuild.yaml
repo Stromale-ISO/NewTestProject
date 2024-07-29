@@ -3,6 +3,6 @@ steps:
     args: ['install']
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'start']
-timeout: '120s'
+timeout: '400s'
 options:
   logging: CLOUD_LOGGING_ONLY
