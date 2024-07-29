@@ -4,8 +4,19 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'start']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args: ['functions', 'deploy', 'helloWorld', '--region', 'us-central1', '--runtime', 'nodejs14', '--trigger-http', '--allow-unauthenticated', '--entry-point', 'app']
+    entrypoint: 'gcloud'
+    args:
+      - 'functions'
+      - 'deploy'
+      - 'helloWorld'
+      - '--entry-point'
+      - 'app'
+      - '--runtime'
+      - 'nodejs20'
+      - '--trigger-http'
+      - '--allow-unauthenticated'
+      - '--region'
+      - 'us-central1'
 timeout: '400s'
 options:
   logging: CLOUD_LOGGING_ONLY
